@@ -1,4 +1,4 @@
-from cmath import sqrt
+from math import sqrt
 
 
 def getNumbers():
@@ -16,33 +16,23 @@ def mean(nums):
         total = total + num
     return total / len(nums)
 
-def stdDev(nums, xbar):
+def stdDev(nums):
     sumDevSq = 0.0
     for num in nums:
-        dev = xbar - num
-        sumDevSq = sumDevSq + dev*dev
+        dev = mean(nums) - num
+        sumDevSq = sumDevSq + (dev*dev)
     return sqrt(sumDevSq/(len(nums)-1))
 
-def median(nums):
-    nums.sort()
-    size = len(nums)
-    midPos = size//2
-    if size % 2 == 0:
-        med = (nums[midPos] + nums[midPos-1]) / 2
-    else:
-        med = nums[midPos]
-    return med
+def meanStdDev(nums):
+    return mean(nums), stdDev(nums)
 
 def main():
-    print('This program computes mean, median and standard deviation.')
+    print('This program computes mean and standard deviation.')
     data = getNumbers()
-    xbar = mean(data)
-    std = stdDev(data, xbar)
-    med = median(data)
+    avg, std = meanStdDev(data)
 
-    print('The mean is', xbar)
-    print('The standar deviation is', std)
-    print('The median is', med)
+    print('The mean is {0:0.4}'.format(avg))
+    print('The standard deviation is {0:0.4}'.format(std))
 
 
 if __name__=='__main__': main()
