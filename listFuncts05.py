@@ -49,11 +49,17 @@ def main():
     text = 'this is a test to see wether this function works out or not'
     list1 = text.split()
     list2 = [4,5,6,8,4,2,1,5,45,21,12,23,0,5,1,3,9,7,13,40]
+    print(list1)
+    print(list2)
     print("Counting 'this':", count(list1, 'this'))
     print("Counting 5:", count(list2, 5))
     print("is 'or' in list:", isin(list1, 'or'))
+    print("is 32 in the list:", isin(list2, 32))
     print("index for 'or':", index(list1, 'or'))
-
+    print("index for 1:", index(list2, 1))
+    print('Testing reverse():')
+    print(reverse(list1))
+    print(reverse(list2))
     print('Testing sort():')
     print(sort(list1))
     print(sort(list2))
