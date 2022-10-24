@@ -63,5 +63,6 @@ def main():
     print('Testing sort():')
     print(sort(list1))
     print(sort(list2))
+    print('The End')
 
 main()
