@@ -9,3 +9,12 @@ def innerProd(x,y):
     except:
         print('Be aware to enter two (same length) lists')
 
+
+def main():
+    list1 = [2,3,4,'fire',6,7,3,8,9]
+    list2 = [1,10,11,12,13,14,'a',15,16]
+    prod = innerProd(list1, list2)
+    print(prod)
+
+
+main()
