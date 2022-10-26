@@ -8,3 +8,10 @@ def shuffle(myList):
         new_element = myList.pop(index)
         new_list.append(new_element)
     return new_list
+
+def main():
+    aList = ['queso', 2, 'suero', 'yuca', 56.2, 'NonSense', 'Mondongo', 8456, 'Album']
+    print(aList)
+    print(shuffle(aList))
+
+main()
