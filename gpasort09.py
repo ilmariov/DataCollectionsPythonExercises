@@ -21,12 +21,11 @@ def main():
     gpas = {}
     for student in data:
         gpas[student.gpa()] = student
-    gpas.sort()
-    std_list = []
-    for gpa in gpas:
-        std_list.append(gpas.get(gpa))
+    gpa_list = list(gpas.keys())
+    sorted_gpa = gpa_list.sort()
+    # enter code to finish
     filename = input('Enter a name for the output file: ')
-    writeStudents(std_list, filename)
+    writeStudents(sorted_gpa, filename)
     print('The data has been written to', filename)
 
 if __name__=='__main__': main()
