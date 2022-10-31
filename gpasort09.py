@@ -18,14 +18,16 @@ def main():
     print('This program sorts student grade information by GPA')
     filename = input('Enter the name of the data file: ')
     data = readStudents(filename)
-    gpas = {}
+    gpa_tuple = {}
     for student in data:
-        gpas[student.gpa()] = student
-    gpa_list = list(gpas.keys())
-    sorted_gpa = gpa_list.sort()
-    # enter code to finish
+        gpa_tuple[student.gpa()] = student
+    bygpa_list = list(gpa_tuple.items())
+    bygpa_list.sort()
+    sorted_students = []
+    for item in bygpa_list:
+        sorted_students.append(item[1])
     filename = input('Enter a name for the output file: ')
-    writeStudents(sorted_gpa, filename)
+    writeStudents(sorted_students, filename)
     print('The data has been written to', filename)
 
 if __name__=='__main__': main()
